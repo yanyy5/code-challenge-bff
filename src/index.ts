@@ -1,2 +1,10 @@
+import { Checkout } from "./checkout";
+import { products } from "./data";
 
-console.log("Init TypeScript Project!");
+
+const co = new Checkout([]);
+co.scan("ipd");
+co.scan("ipd");
+const totalPrice = co.total();
+
+console.log("totalPrice", totalPrice)
