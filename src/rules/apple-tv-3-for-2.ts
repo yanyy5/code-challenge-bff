@@ -1,4 +1,5 @@
 import { PricingRule, Product } from "../@types";
+import { roundPrice } from "../utils/roundPrice";
 
 export class AppleTV3For2 implements PricingRule {
   apply(products: Product[]): number {
@@ -11,7 +12,7 @@ export class AppleTV3For2 implements PricingRule {
       // calculate the number of free apple TVs: 1 out of every 3
       const discountedCount = Math.floor(appleTVs.length / 3);
       console.log("free apple tv", discountedCount)
-      discount = discountedCount * appleTVs[0].price;
+      discount = roundPrice(discountedCount * appleTVs[0].price);
     }
     console.log("apple tv discount", discount)
     return discount;
