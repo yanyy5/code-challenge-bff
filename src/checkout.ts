@@ -29,7 +29,7 @@ export class Checkout {
         // and use the original total price - deducted price.
         const originalTotalPrice = this.cartProducts.reduce((sum, product) => sum + product.price, 0)
         console.log("originalTotalPrice", originalTotalPrice);
-        const deductPriceFromRules = 9999;
+        const deductPriceFromRules = this.pricingRules.reduce((sum, pricingRule)=> sum + pricingRule.apply(this.cartProducts), 0);
         console.log("deductPriceFromRules", deductPriceFromRules);
         return originalTotalPrice - deductPriceFromRules;
     }
