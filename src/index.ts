@@ -12,8 +12,10 @@ rules.push(new iPadBulkDiscount());
 const co = new Checkout(rules);
 
 // scan random products
-co.scan("ipd");
-co.scan("ipd");
+co.scan("atv");
+co.scan("atv");
+co.scan("atv");
+co.scan("atv");
 
 // calculate total price
 const totalPrice = co.total();
