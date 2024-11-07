@@ -11,10 +11,9 @@ export class AppleTV3For2 implements PricingRule {
     if (appleTVs.length >= 3) {
       // calculate the number of free apple TVs: 1 out of every 3
       const discountedCount = Math.floor(appleTVs.length / 3);
-      console.log("free apple tv", discountedCount)
       discount = roundPrice(discountedCount * appleTVs[0].price);
     }
-    console.log("apple tv discount", discount)
+    
     return discount;
   }
 }

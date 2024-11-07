@@ -14,7 +14,6 @@ export class iPadBulkDiscount implements PricingRule {
       discount = roundPrice((ipads[0].price - IPAD_DISCOUNT_PRICE) * ipads.length);
     }
     
-    console.log("ipad discount", discount)
     return discount;
   }
 }

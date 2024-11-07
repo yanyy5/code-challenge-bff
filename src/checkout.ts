@@ -21,7 +21,6 @@ export class Checkout {
         }
 
         // add it to cart
-        console.log(`item ${sku} is scanned`);
         this.cartProducts.push(foundProduct);
     }
 
@@ -29,9 +28,9 @@ export class Checkout {
         // we adopt the strategy that calculate the deducted price from all rules first,
         // and use the original total price - deducted price.
         const originalTotalPrice = roundPrice(this.cartProducts.reduce((sum, product) => sum + product.price, 0));
-        console.log("originalTotalPrice", originalTotalPrice);
+        
         const deductPriceFromRules = roundPrice(this.pricingRules.reduce((sum, pricingRule)=> sum + pricingRule.apply(this.cartProducts), 0));
-        console.log("deductPriceFromRules", deductPriceFromRules);
+        
         const discountedPrice = roundPrice(originalTotalPrice - deductPriceFromRules);
         
         return discountedPrice;
