@@ -16,6 +16,11 @@ co.scan("atv");
 co.scan("atv");
 co.scan("atv");
 co.scan("atv");
+co.scan("ipd");
+co.scan("ipd");
+co.scan("ipd");
+co.scan("ipd");
+co.scan("ipd");
 
 // calculate total price
 const totalPrice = co.total();
