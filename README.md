@@ -1,48 +1,38 @@
-Zeller is starting a computer store. You have been engaged to build the checkout system. We will start with the following products in our catalogue
+# Checkout System
 
+This is a TypeScript implementation of a checkout system for a computer store. The system supports pricing rules and allows for easy extension in the future.
 
-| SKU     | Name        | Price    |
-| --------|:-----------:| --------:|
-| ipd     | Super iPad  | $549.99  |
-| mbp     | MacBook Pro | $1399.99 |
-| atv     | Apple TV    | $109.50  |
-| vga     | VGA adapter | $30.00   |
+## Requirements
 
-As we're launching our new computer store, we would like to have a few opening day specials.
+- TypeScript
+- Jest for testing
+- Node.js
 
-- we're going to have a 3 for 2 deal on Apple TVs. For example, if you buy 3 Apple TVs, you will pay the price of 2 only
-- the brand new Super iPad will have a bulk discounted applied, where the price will drop to $499.99 each, if someone buys more than 4
+## Installation
 
-As our Sales manager is quite indecisive, we want the pricing rules to be as flexible as possible as they can change in the future with little notice.
+1. Clone the repository and checkout to the branch `task/code-challenge`:
 
-Our checkout system can scan items in any order.
+   ```bash
+   git clone https://github.com/yanyy5/code-challenge-bff.git
+   
+   cd code-challenge-bff
 
-The interface to our checkout looks like this (shown in typescript):
+   git checkout task/code-challenge 
 
-```typescript
-  const co = new Checkout(pricingRules);
-  co.scan(item1);
-  co.scan(item2);
-  co.total();
-```
+2. Install dependencies:
 
-Your task is to implement a checkout system that fulfils the requirements described above.
+   ```bash
+   npm install
 
-Example scenarios
------------------
+## Running the Application
 
-SKUs Scanned: atv, atv, atv, vga
-Total expected: $249.00
+1. Start the checkout system:
 
-SKUs Scanned: atv, ipd, ipd, atv, ipd, ipd, ipd
-Total expected: $2718.95
+There is no UIs. So we can only create and test rules through `main.ts` or `*.test.ts` directly.
 
-Notes on implementation:
+2. Run tests:
 
-- use **Typescript**
-- try not to spend more than 2 hours maximum. (We don't want you to lose a weekend over this!)
-- don't build guis etc, we're more interested in your approach to solving the given task, not how shiny it looks
-- don't worry about making a command line interface to the application
-- don't use any frameworks
+To ensure everything is working correctly, run the tests using Jest:
 
-When you've finished, send through the link to your github-repo.
+   ```bash
+   npm test 
